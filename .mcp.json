@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gmail": {
+      "command": "/usr/local/bin/npx",
+      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"]
+    }
+  }
+}

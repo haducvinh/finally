@@ -1,0 +1,145 @@
+{
+  "_description": "Copy the relevant sections into another project's .claude/settings.json to make these resources available.",
+
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  },
+
+  "mcpServers": {
+    "gmail": {
+      "command": "npx",
+      "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"]
+    }
+  },
+
+  "permissions": {
+    "allow": [
+      "Agent"
+    ]
+  },
+
+  "_reference": {
+    "agents": {
+      "local_project_agents": [
+        {
+          "name": "reviewer",
+          "file": ".claude/agents/reviewer.md",
+          "description": "Reviews PLAN.md and writes feedback to planning/REVIEW.md",
+          "note": "Copy .claude/agents/reviewer.md into the target project's .claude/agents/ folder"
+        }
+      ],
+      "plugin_agents": [
+        "superpowers:code-reviewer",
+        "feature-dev:code-architect",
+        "feature-dev:code-explorer",
+        "feature-dev:code-reviewer",
+        "code-simplifier:code-simplifier"
+      ]
+    },
+
+    "skills": {
+      "project_skills": [
+        {
+          "name": "cerebras-inference",
+          "file": ".claude/skills/cerebras-inference.md",
+          "note": "Copy into target project's .claude/skills/ folder"
+        },
+        {
+          "name": "doc-review",
+          "file": ".claude/skills/doc-review.md",
+          "note": "Copy into target project's .claude/skills/ folder"
+        }
+      ],
+      "plugin_skills": {
+        "superpowers": [
+          "superpowers:using-superpowers",
+          "superpowers:brainstorming",
+          "superpowers:writing-plans",
+          "superpowers:executing-plans",
+          "superpowers:systematic-debugging",
+          "superpowers:test-driven-development",
+          "superpowers:verification-before-completion",
+          "superpowers:finishing-a-development-branch",
+          "superpowers:requesting-code-review",
+          "superpowers:receiving-code-review",
+          "superpowers:writing-skills",
+          "superpowers:dispatching-parallel-agents",
+          "superpowers:subagent-driven-development",
+          "superpowers:using-git-worktrees"
+        ],
+        "frontend-design": [
+          "frontend-design:frontend-design"
+        ],
+        "feature-dev": [
+          "feature-dev:feature-dev"
+        ],
+        "code-review": [
+          "code-review:code-review"
+        ],
+        "ralph-loop": [
+          "ralph-loop:ralph-loop",
+          "ralph-loop:cancel-ralph",
+          "ralph-loop:help"
+        ],
+        "user_built_in": [
+          "update-config",
+          "keybindings-help",
+          "simplify",
+          "fewer-permission-prompts",
+          "loop",
+          "schedule",
+          "claude-api",
+          "find-skills",
+          "init",
+          "review",
+          "security-review"
+        ]
+      }
+    },
+
+    "mcp_tools": {
+      "context7": [
+        "mcp__plugin_context7_context7__resolve-library-id",
+        "mcp__plugin_context7_context7__query-docs"
+      ],
+      "playwright": [
+        "mcp__plugin_playwright_playwright__browser_navigate",
+        "mcp__plugin_playwright_playwright__browser_click",
+        "mcp__plugin_playwright_playwright__browser_type",
+        "mcp__plugin_playwright_playwright__browser_snapshot",
+        "mcp__plugin_playwright_playwright__browser_take_screenshot",
+        "mcp__plugin_playwright_playwright__browser_fill_form",
+        "mcp__plugin_playwright_playwright__browser_select_option",
+        "mcp__plugin_playwright_playwright__browser_hover",
+        "mcp__plugin_playwright_playwright__browser_drag",
+        "mcp__plugin_playwright_playwright__browser_press_key",
+        "mcp__plugin_playwright_playwright__browser_evaluate",
+        "mcp__plugin_playwright_playwright__browser_run_code",
+        "mcp__plugin_playwright_playwright__browser_wait_for",
+        "mcp__plugin_playwright_playwright__browser_network_requests",
+        "mcp__plugin_playwright_playwright__browser_console_messages",
+        "mcp__plugin_playwright_playwright__browser_tabs",
+        "mcp__plugin_playwright_playwright__browser_resize",
+        "mcp__plugin_playwright_playwright__browser_navigate_back",
+        "mcp__plugin_playwright_playwright__browser_file_upload",
+        "mcp__plugin_playwright_playwright__browser_handle_dialog",
+        "mcp__plugin_playwright_playwright__browser_close"
+      ],
+      "google_drive": [
+        "mcp__claude_ai_Google_Drive__authenticate",
+        "mcp__claude_ai_Google_Drive__complete_authentication"
+      ],
+      "ide": [
+        "mcp__ide__executeCode",
+        "mcp__ide__getDiagnostics"
+      ]
+    }
+  }
+}
